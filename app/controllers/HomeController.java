@@ -119,7 +119,7 @@ public class HomeController extends Controller {
                 // Customer exists
                 newCustomer.update();
             }
-            
+
             // Set a success message in flash (for display in return view)
             flash("success", "Customer "+ newCustomer.getFName() + " was added");
 
@@ -142,7 +142,7 @@ public class HomeController extends Controller {
 
             // Create a form based on the Product class and fill using p...
             productForm = formFactory.form(Product.class).fill(p);
-
+            flash("success","product has been UPDATED"); // DONT KNOW HOW TO IMPLEMENT FLASH
         } catch (Exception ex){
             // Display an error message or page
             return badRequest("error");

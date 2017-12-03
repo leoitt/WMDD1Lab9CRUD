@@ -4,3 +4,8 @@
 function confirmDel(){
     return confirm('Are you sure?');
 }
+
+
+function confirmAddedUpdated(){
+    return confirm('Are you sure?');
+}

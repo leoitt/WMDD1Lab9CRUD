@@ -6,7 +6,11 @@
 
 @main("Add customer"){
     <p class="lead">Add a new customer</p>
-
+    @if(flash.containsKey("success")){
+        <div class="alert alert-success">
+            @flash.get("success")
+        </div>
+    }
     <!--Use the views.html.helpers package to create the form -->
     @form(action=routes.HomeController.addCustomerSubmit() , 'class -> "form-horizontal", 'role -> "form"){
 
@@ -26,7 +30,7 @@
 
         <!--Add a submit button -->
         <div class="actions">
-            <input type="submit" value="Add Customer" class="btn btn-primary">
+            <input type="submit" value="Add Customer" class="btn btn-primary" onclick="return confirmAddedUpdated();">
             <a href="@routes.HomeController.customers()"><!--index() ??? or index -->
                 <button class="btn btn-warning">Cancel</button>
             </a>
